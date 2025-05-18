@@ -58,6 +58,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Raw\biker-animation.json" />
+    <None Remove="Resources\Raw\scanning.json" />
   </ItemGroup>
   
 	<ItemGroup>
