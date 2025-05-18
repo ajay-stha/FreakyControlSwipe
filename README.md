@@ -27,6 +27,3 @@ This is a sample .NET MAUI application demonstrating the use of custom controls,
 
 ## Custom Controls
 - `FreakySwipeButton`: Located in `Components/FreakySwipeButton.cs`. Demonstrates a swipeable button control.
-
-## License
-This project is for demonstration purposes. Add your license information here.
