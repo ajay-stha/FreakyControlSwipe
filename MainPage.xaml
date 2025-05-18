@@ -3,7 +3,8 @@
     x:Class="FreakyControlsSample.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:component="clr-namespace:FreakyControlsSample.Component">
+    xmlns:component="clr-namespace:FreakyControlsSample.Component"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
@@ -25,6 +26,80 @@
                 HorizontalOptions="Fill"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Text="Click me" />
+            <skia:SKLottieView
+                HeightRequest="400"
+                RepeatCount="-1"
+                RepeatMode="Reverse"
+                Source="walking_batman.json"
+                WidthRequest="400" />
+            <Border
+                HeightRequest="200"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="2">
+                <skia:SKLottieView
+                    RepeatCount="-1"
+                    ScaleX="4.2"
+                    Source="scanning.json" />
+            </Border>
+
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Apple</x:String>
+                        <x:String>Banana</x:String>
+                        <x:String>Cherry</x:String>
+                        <x:String>Date</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Background="#11707070"
+                            HeightRequest="100"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 20">
+                            <Grid>
+                                <Label
+                                    Margin="20"
+                                    FontSize="18"
+                                    Text="{Binding}" />
+                                <skia:SKLottieView RepeatCount="-1" Source="walking_batman.json" />
+                                <skia:SKLottieView
+                                    RepeatCount="-1"
+                                    ScaleX="10"
+                                    Source="scanning.json" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView x:Name="LottieCollectionView" ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Margin="0,0,0,20"
+                            Background="#11707070"
+                            HeightRequest="100"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 20">
+                            <Grid>
+                                <Label
+                                    Margin="20"
+                                    FontSize="18"
+                                    Text="{Binding Name}" />
+                                <skia:SKLottieView
+                                    IsVisible="{Binding IsVisible}"
+                                    RepeatCount="-1"
+                                    ScaleX="10"
+                                    Source="scanning.json" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
             <StackLayout Margin="40">
                 <component:FreakySwipeButton AbsoluteLayout.LayoutFlags="None" HeightRequest="50">
 
