@@ -6,6 +6,7 @@ namespace FreakyControlsSample
     public partial class MainPage : ContentPage
     {
         int count = 0;
+
         public ObservableCollection<CollectionDataItem> Items { get; set; } = new()
             {
                 new CollectionDataItem { Name = "Item 1", IsVisible = false },
@@ -32,6 +33,8 @@ namespace FreakyControlsSample
                 CounterBtn.Text = $"Clicked {count} times";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
+            Items.First().Name = "Ajay";
+            Items.First().IsVisible = true;
         }
     }
 
