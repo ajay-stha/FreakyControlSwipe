@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FreakyControlsSample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:component="clr-namespace:FreakyControlsSample.Component">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="185"
+                SemanticProperties.Description="dot net bot in a race car number eight"
+                Source="dotnet_bot.png" />
+
+            <Label
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Hello, World!" />
+
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+            <StackLayout Margin="40">
+                <component:FreakySwipeButton AbsoluteLayout.LayoutFlags="None" HeightRequest="50">
+
+                    <component:FreakySwipeButton.TrackBar>
+                        <Frame
+                            Padding="10"
+                            BackgroundColor="SlateGrey"
+                            CornerRadius="40"
+                            HasShadow="false" />
+                    </component:FreakySwipeButton.TrackBar>
+
+                    <component:FreakySwipeButton.TrackLabel>
+                        <Label
+                            Background="Yellow"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Slide to cancel"
+                            VerticalOptions="CenterAndExpand" />
+                    </component:FreakySwipeButton.TrackLabel>
+
+                    <component:FreakySwipeButton.FillBar>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Red"
+                            CornerRadius="40"
+                            HasShadow="false" />
+                    </component:FreakySwipeButton.FillBar>
+                </component:FreakySwipeButton>
+            </StackLayout>
+            <StackLayout Margin="40">
+                <component:FreakySwipeButton Padding="0" HeightRequest="60">
+                    <component:FreakySwipeButton.Thumb>
+                        <Frame
+                            Margin="10,0,0,0"
+                            Padding="0"
+                            BackgroundColor="Red"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="50" />
+                    </component:FreakySwipeButton.Thumb>
+
+                    <component:FreakySwipeButton.TrackBar>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Gray"
+                            CornerRadius="40"
+                            HasShadow="false" />
+                    </component:FreakySwipeButton.TrackBar>
+                    <component:FreakySwipeButton.TrackLabel>
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Hell"
+                            VerticalOptions="CenterAndExpand" />
+                    </component:FreakySwipeButton.TrackLabel>
+                    <component:FreakySwipeButton.FillBar>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Red"
+                            CornerRadius="40"
+                            HasShadow="false" />
+                    </component:FreakySwipeButton.FillBar>
+                </component:FreakySwipeButton>
+            </StackLayout>
+            <StackLayout Margin="40">
+                <component:SlideToActView HeightRequest="50">
+                    <component:SlideToActView.Thumb>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Silver"
+                            CornerRadius="10"
+                            HasShadow="false">
+                            <Image
+                                HeightRequest="40"
+                                HorizontalOptions="Center"
+                                Source="icon.png"
+                                VerticalOptions="Center"
+                                WidthRequest="40" />
+                        </Frame>
+                    </component:SlideToActView.Thumb>
+
+                    <component:SlideToActView.TrackBar>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Gray"
+                            CornerRadius="10"
+                            HasShadow="false">
+                            <Label
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Slide 'x' to cancel"
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
+                    </component:SlideToActView.TrackBar>
+
+                    <component:SlideToActView.FillBar>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="Red"
+                            CornerRadius="10"
+                            HasShadow="false" />
+                    </component:SlideToActView.FillBar>
+                </component:SlideToActView>
+                <Label
+                    x:Name="MessageLbl"
+                    FontAttributes="Bold"
+                    TextColor="Green" />
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
